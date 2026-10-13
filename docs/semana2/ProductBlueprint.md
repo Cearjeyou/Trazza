@@ -165,7 +165,7 @@ El lienzo debe cubrir: problema, segmento de usuarios, propuesta de valor única
 | :---: | --- | --- |
 | Interfaz | Aplicación web (TypeScript): portal de la fintech y portal del fondeador | La fintech carga la cartera, configura condiciones, asigna créditos, recibe alertas y registra sustituciones. El fondeador ingresa con passkey, consulta sus créditos y verifica las huellas. |
 | Lógica | Backend (TypeScript + Stellar SDK): motor de reglas, servicio de huellas y base de datos privada | Aplica las condiciones de cada fondeador y genera alertas de mora. Calcula la huella (hash) de cada evento y la envía a la red. Guarda los datos completos con control de acceso, sin enviar datos personales a la cadena. |
-| Stellar | Contrato Soroban (Rust), consultas por Horizon/RPC, passkeys y Launchtube | El contrato registra la huella y la fecha de cada evento y rechaza las asignaciones duplicadas. Las consultas permiten al fondeador verificar los registros de forma independiente. |
+| Stellar | Contrato Soroban (Rust), consultas por Horizon/RPC, passkeys y OpenZeppelin Relayer | El contrato registra la huella y la fecha de cada evento y rechaza las asignaciones duplicadas. Las consultas permiten al fondeador verificar los registros de forma independiente. |
 
 **En qué punto entra la red:** la red entra cuando ocurre uno de tres eventos: la asignación de un crédito a un fondeador, un cambio de mora o una sustitución. En ese momento, el backend calcula la huella del evento y la envía al contrato de Soroban, que la registra con su fecha y, en el caso de las asignaciones, verifica que el crédito no esté asignado a otro fondeador. La red vuelve a usarse cuando el fondeador verifica un registro: el portal consulta la huella publicada y la compara con la calculada a partir de los datos. El resto del flujo (carga de cartera, reglas y alertas) ocurre fuera de la cadena.
 
@@ -183,5 +183,5 @@ El lienzo debe cubrir: problema, segmento de usuarios, propuesta de valor única
 | **Stellar RPC / Horizon** | Consultar los registros publicados para que el fondeador compare las huellas. | Permite verificar directamente en la red pública, sin depender de los servidores de Trazza ni de la fintech. |
 | **Stellar SDK (TypeScript)** | Conectar el backend con la red para enviar eventos y consultar registros. | Es la librería oficial y usa el mismo lenguaje del resto de la aplicación. |
 | **Passkeys** | Permitir que el fondeador firme con huella o reconocimiento facial. | Los fondeadores no necesitan instalar ni manejar una billetera cripto como Freighter. |
-| **Launchtube** | Enviar las transacciones y cubrir las comisiones de red. | Ni la fintech ni el fondeador necesitan tener XLM para pagar comisiones. |
+| **OpenZeppelin Relayer** | Enviar las transacciones y cubrir las comisiones de red. | Ni la fintech ni el fondeador necesitan tener XLM para pagar comisiones. Es el servicio que la documentación de Stellar recomienda para enviar transacciones con comisiones patrocinadas. |
 | **Red de pruebas (testnet)** | Desarrollar y validar el MVP. | Permite probar sin costo real antes de pasar a la red principal. |

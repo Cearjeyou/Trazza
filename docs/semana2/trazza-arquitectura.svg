@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1650" viewBox="0 0 2000 1375" font-family="Liberation Sans, Arial, Helvetica, sans-serif">
+  <style>
+    .titulo { font-size: 46px; font-weight: 700; fill: #1a1a2e; }
+    .subtitulo { font-size: 24px; fill: #555555; }
+    .etiqueta { font-size: 23px; font-weight: 700; letter-spacing: 2px; }
+    .caja { fill: #ffffff; stroke: #d0d0d8; stroke-width: 1.5; }
+    .caja-titulo { font-size: 26px; font-weight: 700; fill: #1a1a2e; }
+    .caja-texto { font-size: 23px; fill: #1a1a2e; }
+    .flecha { font-size: 23px; fill: #1a1a2e; }
+  </style>
+
+  <rect width="2000" height="1375" fill="#ffffff"/>
+
+  <text class="titulo" x="67" y="95">Trazza · Arquitectura inicial</text>
+  <text class="subtitulo" x="67" y="135">Datos completos fuera de la cadena · solo huellas (hashes) y reglas de asignación en Stellar</text>
+
+  <!-- Usuarios y fuentes -->
+  <rect x="68" y="180" width="1864" height="217" rx="22" fill="#f5f5f5" stroke="#8a8a8a" stroke-width="3"/>
+  <text class="etiqueta" x="100" y="227" fill="#555555">USUARIOS Y FUENTES</text>
+
+  <rect class="caja" x="101" y="249" width="583" height="115" rx="14"/>
+  <text class="caja-titulo" x="125" y="295">Fintech</text>
+  <text class="caja-texto" x="125" y="337">Administrador y analista de cartera</text>
+
+  <rect class="caja" x="709" y="249" width="582" height="115" rx="14"/>
+  <text class="caja-titulo" x="733" y="295">Fondeador</text>
+  <text class="caja-texto" x="733" y="337">Consulta y verifica su cartera</text>
+
+  <rect class="caja" x="1316" y="249" width="583" height="115" rx="14"/>
+  <text class="caja-titulo" x="1341" y="295">Archivo de cartera</text>
+  <text class="caja-texto" x="1341" y="337">Formato estándar, identificadores anónimos</text>
+
+  <text class="flecha" x="1000" y="435" text-anchor="middle">▼</text>
+
+  <!-- Interfaz -->
+  <rect x="68" y="453" width="1864" height="219" rx="22" fill="#f1eefc" stroke="#6b4fd8" stroke-width="3"/>
+  <text class="etiqueta" x="100" y="500" fill="#6b4fd8">INTERFAZ · APLICACIÓN WEB (TYPESCRIPT)</text>
+
+  <rect class="caja" x="101" y="522" width="886" height="117" rx="14"/>
+  <text class="caja-titulo" x="125" y="568">Portal de la fintech</text>
+  <text class="caja-texto" x="125" y="610">Carga de cartera, condiciones, asignación, alertas y sustituciones</text>
+
+  <rect class="caja" x="1013" y="522" width="886" height="117" rx="14"/>
+  <text class="caja-titulo" x="1037" y="568">Portal del fondeador</text>
+  <text class="caja-texto" x="1037" y="610">Ingreso con passkey, consulta y verificación de huellas</text>
+
+  <text class="flecha" x="1002" y="709" text-anchor="middle">▼ API</text>
+
+  <!-- Lógica -->
+  <rect x="68" y="728" width="1864" height="249" rx="22" fill="#ecf5fd" stroke="#1482d6" stroke-width="3"/>
+  <text class="etiqueta" x="100" y="775" fill="#1482d6">LÓGICA · BACKEND (TYPESCRIPT + STELLAR SDK)</text>
+
+  <rect class="caja" x="101" y="797" width="583" height="147" rx="14"/>
+  <text class="caja-titulo" x="125" y="843">Motor de reglas</text>
+  <text class="caja-texto" x="125" y="885">Condiciones por fondeador, alertas de mora,</text>
+  <text class="caja-texto" x="125" y="915">elegibilidad para sustituir</text>
+
+  <rect class="caja" x="709" y="797" width="582" height="147" rx="14"/>
+  <text class="caja-titulo" x="733" y="843">Servicio de huellas</text>
+  <text class="caja-texto" x="733" y="885">Calcula el hash de cada evento y lo envía a la red</text>
+
+  <rect class="caja" x="1316" y="797" width="583" height="147" rx="14"/>
+  <text class="caja-titulo" x="1341" y="843">Base de datos privada</text>
+  <text class="caja-texto" x="1341" y="885">Créditos, fondeadores y eventos, con control de</text>
+  <text class="caja-texto" x="1341" y="915">acceso. Sin datos personales en la red</text>
+
+  <rect x="454" y="993" width="785" height="41" rx="20.5" fill="#fdeebc" stroke="#e5c15a" stroke-width="1.5"/>
+  <text class="flecha" x="846" y="1022" text-anchor="middle">▼ Punto de entrada a la red: asignación · cambio de mora · sustitución</text>
+  <text class="flecha" x="1262" y="1022">▲ consulta (Horizon / RPC)</text>
+
+  <!-- Stellar -->
+  <rect x="68" y="1050" width="1864" height="250" rx="22" fill="#e9f8f0" stroke="#12a565" stroke-width="3"/>
+  <text class="etiqueta" x="100" y="1097" fill="#12a565">STELLAR (TESTNET)</text>
+
+  <rect class="caja" x="101" y="1119" width="583" height="148" rx="14"/>
+  <text class="caja-titulo" x="125" y="1165">Contrato Soroban (Rust)</text>
+  <text class="caja-texto" x="125" y="1207">Registra huella y fecha de cada evento y rechaza</text>
+  <text class="caja-texto" x="125" y="1238">asignaciones duplicadas</text>
+
+  <rect class="caja" x="709" y="1119" width="582" height="148" rx="14"/>
+  <text class="caja-titulo" x="733" y="1165">Consulta de registros</text>
+  <text class="caja-texto" x="733" y="1207">Horizon / RPC para que el fondeador verifique de</text>
+  <text class="caja-texto" x="733" y="1238">forma independiente</text>
+
+  <rect class="caja" x="1316" y="1119" width="583" height="148" rx="14"/>
+  <text class="caja-titulo" x="1341" y="1165">Passkeys + OpenZeppelin Relayer</text>
+  <text class="caja-texto" x="1341" y="1207">Firma sin billetera cripto y pago de comisiones de</text>
+  <text class="caja-texto" x="1341" y="1238">red</text>
+</svg>
