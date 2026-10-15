@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Favicon provisional (versión simplificada del logo). -->
+  <defs>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="30" y1="170" x2="170" y2="30">
+      <stop offset="0" stop-color="#0A2463"/>
+      <stop offset=".55" stop-color="#03B5AA"/>
+      <stop offset="1" stop-color="#AFFC41"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="url(#g)" stroke-width="14"/>
+  <path d="M100,100 C118,70 162,68 162,100 C162,132 118,130 100,100 C82,70 38,68 38,100 C38,132 82,130 100,100 Z" fill="none" stroke="url(#g)" stroke-width="24" stroke-linecap="round" transform="rotate(-32 100 100)"/>
+</svg>

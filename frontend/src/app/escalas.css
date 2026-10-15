@@ -1,0 +1,147 @@
+/* Generado por scripts/generar-escalas.mjs; no editar a mano (pnpm escalas). */
+
+:root {
+  --marca-azul: #0a2463;
+  --marca-agua: #03b5aa;
+  --marca-lima: #affc41;
+  --marca-rosa: #ca054d;
+  --marca-almendra: #ffddd2;
+
+  /* azul: el color de la marca es el paso 950 */
+  --azul-50: #f0f5ff;
+  --azul-100: #dfeaff;
+  --azul-200: #c6daff;
+  --azul-300: #a0c0ff;
+  --azul-400: #7b9fe9;
+  --azul-500: #6285cd;
+  --azul-600: #4d6eb4;
+  --azul-700: #3d5da1;
+  --azul-800: #2c4a8d;
+  --azul-900: #1e3976;
+  --azul-950: #0a2463;
+  --azul-975: #031447;
+
+  /* agua: el color de la marca es el paso 400 */
+  --agua-50: #d6fffa;
+  --agua-100: #bcf8f1;
+  --agua-200: #95ece3;
+  --agua-300: #67d6cb;
+  --agua-400: #03b5aa;
+  --agua-500: #009c92;
+  --agua-600: #00827a;
+  --agua-700: #006f68;
+  --agua-800: #005b55;
+  --agua-900: #004843;
+  --agua-950: #003330;
+  --agua-975: #00201e;
+
+  /* lima: el color de la marca es el paso 200 */
+  --lima-50: #e6ffcf;
+  --lima-100: #d2f9aa;
+  --lima-200: #affc41;
+  --lima-300: #97d742;
+  --lima-400: #78b600;
+  --lima-500: #649900;
+  --lima-600: #538000;
+  --lima-700: #466d00;
+  --lima-800: #395a00;
+  --lima-900: #2c4600;
+  --lima-950: #1e3200;
+  --lima-975: #112000;
+
+  /* rosa: el color de la marca es el paso 600 */
+  --rosa-50: #fff1f2;
+  --rosa-100: #ffe1e4;
+  --rosa-200: #ffc9cf;
+  --rosa-300: #ffa2ae;
+  --rosa-400: #ff6382;
+  --rosa-500: #e93865;
+  --rosa-600: #ca054d;
+  --rosa-700: #b20043;
+  --rosa-800: #930036;
+  --rosa-900: #760029;
+  --rosa-950: #57001c;
+  --rosa-975: #390010;
+
+  /* almendra: el color de la marca es el paso 100 */
+  --almendra-50: #fef2ee;
+  --almendra-100: #ffddd2;
+  --almendra-200: #ebd3cc;
+  --almendra-300: #d5b9b0;
+  --almendra-400: #b8988e;
+  --almendra-500: #9e7f75;
+  --almendra-600: #86695f;
+  --almendra-700: #75584f;
+  --almendra-800: #62473e;
+  --almendra-900: #4f362e;
+  --almendra-950: #3b251e;
+  --almendra-975: #28150e;
+}
+
+@theme inline {
+  --color-marca-azul: var(--marca-azul);
+  --color-marca-agua: var(--marca-agua);
+  --color-marca-lima: var(--marca-lima);
+  --color-marca-rosa: var(--marca-rosa);
+  --color-marca-almendra: var(--marca-almendra);
+  --color-azul-50: var(--azul-50);
+  --color-azul-100: var(--azul-100);
+  --color-azul-200: var(--azul-200);
+  --color-azul-300: var(--azul-300);
+  --color-azul-400: var(--azul-400);
+  --color-azul-500: var(--azul-500);
+  --color-azul-600: var(--azul-600);
+  --color-azul-700: var(--azul-700);
+  --color-azul-800: var(--azul-800);
+  --color-azul-900: var(--azul-900);
+  --color-azul-950: var(--azul-950);
+  --color-azul-975: var(--azul-975);
+  --color-agua-50: var(--agua-50);
+  --color-agua-100: var(--agua-100);
+  --color-agua-200: var(--agua-200);
+  --color-agua-300: var(--agua-300);
+  --color-agua-400: var(--agua-400);
+  --color-agua-500: var(--agua-500);
+  --color-agua-600: var(--agua-600);
+  --color-agua-700: var(--agua-700);
+  --color-agua-800: var(--agua-800);
+  --color-agua-900: var(--agua-900);
+  --color-agua-950: var(--agua-950);
+  --color-agua-975: var(--agua-975);
+  --color-lima-50: var(--lima-50);
+  --color-lima-100: var(--lima-100);
+  --color-lima-200: var(--lima-200);
+  --color-lima-300: var(--lima-300);
+  --color-lima-400: var(--lima-400);
+  --color-lima-500: var(--lima-500);
+  --color-lima-600: var(--lima-600);
+  --color-lima-700: var(--lima-700);
+  --color-lima-800: var(--lima-800);
+  --color-lima-900: var(--lima-900);
+  --color-lima-950: var(--lima-950);
+  --color-lima-975: var(--lima-975);
+  --color-rosa-50: var(--rosa-50);
+  --color-rosa-100: var(--rosa-100);
+  --color-rosa-200: var(--rosa-200);
+  --color-rosa-300: var(--rosa-300);
+  --color-rosa-400: var(--rosa-400);
+  --color-rosa-500: var(--rosa-500);
+  --color-rosa-600: var(--rosa-600);
+  --color-rosa-700: var(--rosa-700);
+  --color-rosa-800: var(--rosa-800);
+  --color-rosa-900: var(--rosa-900);
+  --color-rosa-950: var(--rosa-950);
+  --color-rosa-975: var(--rosa-975);
+  --color-almendra-50: var(--almendra-50);
+  --color-almendra-100: var(--almendra-100);
+  --color-almendra-200: var(--almendra-200);
+  --color-almendra-300: var(--almendra-300);
+  --color-almendra-400: var(--almendra-400);
+  --color-almendra-500: var(--almendra-500);
+  --color-almendra-600: var(--almendra-600);
+  --color-almendra-700: var(--almendra-700);
+  --color-almendra-800: var(--almendra-800);
+  --color-almendra-900: var(--almendra-900);
+  --color-almendra-950: var(--almendra-950);
+  --color-almendra-975: var(--almendra-975);
+}
