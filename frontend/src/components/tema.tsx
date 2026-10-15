@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useLayoutEffect, useState } from "react"
+import { useCallback, useEffect, useLayoutEffect, useSyncExternalStore } from "react"
 
 export type Tema = "claro" | "oscuro" | "sistema"
 
@@ -61,18 +61,28 @@ export function SincronizarTema() {
   return null
 }
 
-// Para el selector de tema de los portales.
+// Para el selector de tema de los portales. Se lee con useSyncExternalStore
+// (en el servidor vale "sistema") para no desajustar la hidratación.
+const EVENTO = "trazza:tema"
+
+function suscribir(avisar: () => void) {
+  window.addEventListener(EVENTO, avisar)
+  window.addEventListener("storage", avisar)
+  return () => {
+    window.removeEventListener(EVENTO, avisar)
+    window.removeEventListener("storage", avisar)
+  }
+}
+
 export function useTema() {
-  const [tema, setTemaEstado] = useState<Tema>(() =>
-    typeof window === "undefined" ? "sistema" : leerTema()
-  )
+  const tema = useSyncExternalStore<Tema>(suscribir, leerTema, () => "sistema")
 
   const setTema = useCallback((nuevo: Tema) => {
     try {
       localStorage.setItem(CLAVE, nuevo)
     } catch {}
     aplicarTema(nuevo)
-    setTemaEstado(nuevo)
+    window.dispatchEvent(new Event(EVENTO))
   }, [])
 
   return { tema, setTema }

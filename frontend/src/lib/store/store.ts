@@ -60,7 +60,7 @@ export const useDemo = create<EstadoStore>()(
         return enCola(async () => {
           const actual = get()
           const ledger = new LedgerSimulado(structuredClone(actual.ledger))
-          const { estado, ...resto } = await operacion(actual, ledger, new Date())
+          const { estado, ...resto } = await operacion(soloDominio(actual), ledger, new Date())
           set({ ...soloDominio(estado), ledger: ledger.instantanea() })
           return resto as R
         })

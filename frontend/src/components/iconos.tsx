@@ -1,0 +1,78 @@
+import { HugeiconsIcon, type HugeiconsIconProps } from "@hugeicons/react"
+import {
+  Alert02Icon,
+  ArrowDataTransferHorizontalIcon,
+  ArrowDown01Icon,
+  ArrowLeft01Icon,
+  ArrowRight01Icon,
+  ArrowUp01Icon,
+  ArrowUpDownIcon,
+  BlockchainIcon,
+  Building03Icon,
+  Calendar03Icon,
+  CancelCircleIcon,
+  CheckmarkCircle02Icon,
+  Clock01Icon,
+  Coins01Icon,
+  ComputerIcon,
+  Copy01Icon,
+  Csv01Icon,
+  DashboardSquare01Icon,
+  Download04Icon,
+  Exchange01Icon,
+  FileUploadIcon,
+  FingerPrintIcon,
+  InformationCircleIcon,
+  Moon02Icon,
+  PencilEdit02Icon,
+  PlusSignIcon,
+  RefreshIcon,
+  Search01Icon,
+  Sun03Icon,
+  Tick02Icon,
+  UserGroupIcon,
+  Activity01Icon,
+} from "@hugeicons/core-free-icons"
+
+// Único punto de contacto con la librería de íconos: para cambiarla basta con
+// reemplazar los imports de este archivo y el componente Icono.
+export const ICONOS = {
+  resumen: DashboardSquare01Icon,
+  fondeadores: UserGroupIcon,
+  fintech: Building03Icon,
+  cartera: FileUploadIcon,
+  asignacion: ArrowDataTransferHorizontalIcon,
+  alertas: Alert02Icon,
+  actividad: Activity01Icon,
+  sustitucion: Exchange01Icon,
+  red: BlockchainIcon,
+  huella: FingerPrintIcon,
+  saldo: Coins01Icon,
+  fecha: Calendar03Icon,
+  reloj: Clock01Icon,
+  csv: Csv01Icon,
+  descargar: Download04Icon,
+  copiar: Copy01Icon,
+  buscar: Search01Icon,
+  agregar: PlusSignIcon,
+  editar: PencilEdit02Icon,
+  reiniciar: RefreshIcon,
+  info: InformationCircleIcon,
+  correcto: CheckmarkCircle02Icon,
+  rechazado: CancelCircleIcon,
+  marca: Tick02Icon,
+  ordenar: ArrowUpDownIcon,
+  ascendente: ArrowUp01Icon,
+  descendente: ArrowDown01Icon,
+  siguiente: ArrowRight01Icon,
+  anterior: ArrowLeft01Icon,
+  temaClaro: Sun03Icon,
+  temaOscuro: Moon02Icon,
+  temaSistema: ComputerIcon,
+} as const
+
+export type IconoDef = (typeof ICONOS)[keyof typeof ICONOS]
+
+export function Icono(props: HugeiconsIconProps) {
+  return <HugeiconsIcon strokeWidth={1.8} aria-hidden="true" {...props} />
+}

@@ -1,8 +1,13 @@
 import type { Metadata } from "next"
-import { EnConstruccion } from "@/components/en-construccion"
+import { DemoLista } from "@/components/portal/demo-lista"
+import { VistaResumen } from "@/components/fintech/resumen/vista-resumen"
 
-export const metadata: Metadata = { title: "Portal fintech" }
+export const metadata: Metadata = { title: "Resumen" }
 
-export default function PortalFintech() {
-  return <EnConstruccion portal="fintech" />
+export default function ResumenFintech() {
+  return (
+    <DemoLista>
+      <VistaResumen />
+    </DemoLista>
+  )
 }
