@@ -7,6 +7,7 @@ import {
   resumenFondeador,
 } from "@/lib/dominio/reglas"
 import type { Credito, Fondeador } from "@/lib/dominio/tipos"
+import { LedgerSimulado } from "@/lib/ledger/simulado"
 import { useDemo } from "./store"
 
 // Hooks de lectura para los portales. Cada uno se suscribe solo a los trozos
@@ -108,4 +109,13 @@ export function useEstadosCreditos() {
     }
     return estados
   }, [fondeadores, creditos, asignaciones])
+}
+
+/**
+ * Ledger de solo consulta sobre el estado guardado, para que el fondeador
+ * verifique como lo haría contra la red.
+ */
+export function useLedgerConsulta() {
+  const estado = useDemo((s) => s.ledger)
+  return useMemo(() => new LedgerSimulado(structuredClone(estado)), [estado])
 }

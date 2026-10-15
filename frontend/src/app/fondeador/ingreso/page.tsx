@@ -1,8 +1,15 @@
 import type { Metadata } from "next"
-import { EnConstruccion } from "@/components/en-construccion"
+import { MarcoIngreso, VistaIngreso } from "@/components/fondeador/vista-ingreso"
+import { DemoLista } from "@/components/portal/demo-lista"
 
 export const metadata: Metadata = { title: "Ingreso del fondeador" }
 
 export default function IngresoFondeador() {
-  return <EnConstruccion portal="del fondeador" />
+  return (
+    <MarcoIngreso>
+      <DemoLista>
+        <VistaIngreso />
+      </DemoLista>
+    </MarcoIngreso>
+  )
 }

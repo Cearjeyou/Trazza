@@ -14,11 +14,13 @@ export function MarcoPortal({
   portal,
   otroPortal,
   insignias,
+  sesion,
   children,
 }: {
   portal: Portal
   otroPortal: { href: string; nombre: string }
   insignias?: Record<string, number>
+  sesion?: { nombre: string; alSalir: () => void }
   children: React.ReactNode
 }) {
   return (
@@ -26,12 +28,13 @@ export function MarcoPortal({
       <TooltipProvider>
         <Toaster>
           <SidebarProvider>
-            <BarraLateral portal={portal} otroPortal={otroPortal} insignias={insignias} />
-            <SidebarInset>
+            <BarraLateral portal={portal} otroPortal={otroPortal} insignias={insignias} sesion={sesion} />
+            <SidebarInset className="min-w-0">
               <BarraSuperior portal={portal} />
-              <main className="flex flex-1 flex-col gap-6 px-4 py-6 md:px-8 md:py-8">
+              {/* SidebarInset ya es el <main> de la página. */}
+              <div className="flex flex-1 flex-col gap-6 px-4 py-6 md:px-8 md:py-8">
                 {children}
-              </main>
+              </div>
             </SidebarInset>
           </SidebarProvider>
         </Toaster>

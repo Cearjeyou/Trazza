@@ -58,6 +58,32 @@ export const PORTAL_FINTECH: Portal = {
   ],
 }
 
+export const PORTAL_FONDEADOR: Portal = {
+  id: "fondeador",
+  nombre: "Fondeador",
+  inicio: "/fondeador",
+  enlaces: [
+    {
+      href: "/fondeador",
+      titulo: "Mi cartera",
+      descripcion: "En qué créditos está tu dinero y si se cumplen tus condiciones.",
+      icono: ICONOS.saldo,
+    },
+    {
+      href: "/fondeador/sustituciones",
+      titulo: "Sustituciones",
+      descripcion: "Cada crédito que la fintech te cambió, con su fecha, motivo y plazo.",
+      icono: ICONOS.sustitucion,
+    },
+    {
+      href: "/fondeador/verificar",
+      titulo: "Verificar",
+      descripcion: "Comprueba por tu cuenta que un registro no cambió y que el crédito es solo tuyo.",
+      icono: ICONOS.huella,
+    },
+  ],
+}
+
 /** El enlace que corresponde a la ruta, el más específico primero. */
 export function enlaceActivo(portal: Portal, ruta: string) {
   return [...portal.enlaces]
