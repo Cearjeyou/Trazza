@@ -1,5 +1,8 @@
 import { Building03Icon, UserGroupIcon } from "@hugeicons/core-free-icons"
 
+// Oculta las tarjetas de demostración sin modificar las rutas de los portales.
+export const MOSTRAR_TARJETAS_PORTALES = false
+
 export const SECCIONES = [
   { id: "inicio", nombre: "Inicio" },
   { id: "como-funciona", nombre: "Cómo funciona" },

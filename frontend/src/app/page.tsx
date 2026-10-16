@@ -1,6 +1,7 @@
 import { Hero } from "@/components/inicio/hero"
 import { MenuSuperior } from "@/components/inicio/menu-superior"
 import { Movimiento } from "@/components/inicio/movimiento"
+import { MOSTRAR_TARJETAS_PORTALES } from "@/components/inicio/datos"
 import {
   Beneficios,
   Cierre,
@@ -20,7 +21,7 @@ export default function Inicio() {
           <ComoFunciona />
           <Beneficios />
           <PorQueBlockchain />
-          <Cierre />
+          {MOSTRAR_TARJETAS_PORTALES ? <Cierre /> : null}
         </main>
         <Pie />
       </Movimiento>

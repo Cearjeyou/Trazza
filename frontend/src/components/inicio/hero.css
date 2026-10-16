@@ -1,0 +1,151 @@
+.trazzaHero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 800px;
+  min-height: max(760px, 100svh);
+  padding-top: 5rem;
+  background:
+    radial-gradient(ellipse at 75% 77%, color-mix(in oklab, var(--marca-agua) 18%, transparent), transparent 49%),
+    radial-gradient(ellipse at 42% 3%, #06377a 0%, transparent 65%),
+    var(--marca-azul);
+}
+
+.heroInner {
+  position: relative;
+  width: 100%;
+  max-width: 1760px;
+  min-height: calc(max(760px, 100svh) - 5rem);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 6% 6rem;
+}
+
+.trazzaHeroCopy {
+  position: relative;
+  z-index: 1;
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  transform: translateY(1.25rem);
+}
+
+.trazzaHeroTitle {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(6rem, 12.8vw, 13rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+  color: white;
+}
+
+.trazzaHeroMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  width: 100%;
+  max-width: 37rem;
+}
+
+.trazzaHeroText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.trazzaHeroHeadline {
+  margin: 0;
+  color: white;
+  font-size: clamp(1.1rem, 1.65vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.trazzaHeroHeadline span {
+  display: block;
+  white-space: nowrap;
+}
+
+.trazzaHeroDescription {
+  margin: 0;
+  max-width: 34ch;
+  color: color-mix(in oklab, white 82%, transparent);
+  font-size: clamp(0.875rem, 0.98vw, 1rem);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.trazzaHeroShield {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 4.25rem;
+  width: 4.25rem;
+  height: 5rem;
+  color: var(--marca-lima);
+}
+
+.heroArtwork {
+  position: absolute;
+  left: 43%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-47%);
+  aspect-ratio: 1672 / 941;
+  pointer-events: none;
+}
+
+.heroIllustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: trazzaHeroFloat 10s ease-in-out infinite;
+}
+
+@keyframes trazzaHeroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.trazzaHeroLink { margin-top: 1rem; }
+.trazzaHeroShield svg { width: 100%; height: 100%; }
+.heroExplore { display: flex; flex-direction: column; align-items: flex-start; gap: 0.65rem; color: white; font-size: 1.15rem; font-weight: 500; line-height: 1.4; border-radius: 0.2rem; }
+.heroExplore:hover span { text-decoration: underline; text-underline-offset: 0.3em; }
+.heroExplore:focus-visible { outline: 2px solid var(--marca-lima); outline-offset: 0.6rem; }
+
+@media (min-width: 1760px) {
+  .heroInner { padding-inline: 5rem; }
+}
+
+@media (max-width: 1199px) {
+  .trazzaHero { min-height: 0; }
+  .heroInner { display: block; min-height: 0; padding: 3rem 2rem 0; }
+  .trazzaHeroCopy { width: 75%; gap: 2rem; transform: none; }
+  .trazzaHeroTitle { font-size: clamp(6rem, 17vw, 9rem); }
+  .trazzaHeroHeadline { font-size: 1.3rem; }
+  .trazzaHeroHeadline span { white-space: normal; }
+  .heroArtwork { position: relative; inset: auto; width: calc(100% + 4rem); margin: 2rem -2rem 0; transform: none; }
+}
+
+@media (max-width: 599px) {
+  .trazzaHero { padding-top: 4.5rem; }
+  .heroInner { padding: 2.5rem 1.25rem 0; }
+  .trazzaHeroCopy { width: 100%; gap: 1.8rem; }
+  .trazzaHeroTitle { font-size: clamp(5.3rem, 23vw, 8rem); }
+  .trazzaHeroMessage { gap: 0.85rem; }
+  .trazzaHeroHeadline { font-size: 1.1rem; }
+  .trazzaHeroShield { flex-basis: 2.5rem; width: 2.5rem; height: 3rem; }
+  .trazzaHeroLink { margin-top: 0; }
+  .heroExplore { font-size: 1rem; gap: 0.4rem; }
+  .heroArtwork { width: calc(100% + 2.5rem); margin: 2rem -1.25rem 1rem; }
+  .heroIllustration { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroIllustration { animation: none; }
+}

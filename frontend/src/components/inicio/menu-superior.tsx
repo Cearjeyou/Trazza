@@ -2,19 +2,10 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { ArrowDown01Icon } from "@hugeicons/core-free-icons"
 import { Logo } from "@/components/marca/logo"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
-import { PORTALES, SECCIONES } from "./datos"
+import { SECCIONES } from "./datos"
 import { NavSecciones } from "./nav-secciones"
 
 function useSeccionActiva() {
@@ -72,38 +63,13 @@ export function MenuSuperior() {
 
         <NavSecciones activa={activa} />
 
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            render={
-              <Button
-                size="lg"
-                className="bg-marca-lima text-marca-azul hover:bg-marca-lima/85"
-              />
-            }
-          >
-            Entrar
-            <HugeiconsIcon icon={ArrowDown01Icon} data-icon="inline-end" />
-          </DropdownMenuTrigger>
-          {/* El menú se monta fuera de la landing; "dark" mantiene su tema. */}
-          <DropdownMenuContent align="end" className="dark w-64">
-            <DropdownMenuGroup>
-              {PORTALES.map((portal) => (
-                <DropdownMenuItem
-                  key={portal.href}
-                  render={<Link href={portal.href} />}
-                >
-                  <HugeiconsIcon icon={portal.icono} />
-                  <span className="flex flex-col">
-                    <span className="font-medium">{portal.nombre}</span>
-                    <span className="text-xs text-muted-foreground">
-                      {portal.descripcion}
-                    </span>
-                  </span>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuGroup>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <Button
+          size="lg"
+          disabled
+          className="min-w-24 bg-marca-lima text-marca-azul"
+        >
+          Entrar
+        </Button>
       </nav>
     </header>
   )
